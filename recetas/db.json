@@ -1,10 +1,5 @@
 {
-  "medicamentos": [
-    {
-      "name": "aspirina efervescente",
-      "id": 1
-    }
-  ],
+  "medicamentos": [],
   "recetas": [],
   "lineasdereceta": []
 }
