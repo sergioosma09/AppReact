@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 class Menu extends React.Component {
   constructor(props){
@@ -7,6 +8,10 @@ class Menu extends React.Component {
       this.state= {
           active:""
       }
+  }
+
+  componentDidMount(){
+    axios
   }
     handleLinkClick=event=>{
         console.log(event.target.id);
@@ -18,12 +23,9 @@ class Menu extends React.Component {
     return (
         <>
         <div className="ui secondary pointing menu">
-        <Link id="home" onClick={this.handleLinkClick} 
-        className={"ui item "+ (this.state.active==="home"?"active":"")} to="/">Home</Link>
-        <Link id="about" onClick={this.handleLinkClick} 
-        className={"ui item "+ (this.state.active==="about"?"active":"")} to="/about">About</Link>
-        <Link id="medicamentos" onClick={this.handleLinkClick} 
-        className={"ui item "+ (this.state.active==="medicamentos"?"active":"")} to="/medicamentos">Medicamentos</Link>
+        <Link id="home" onClick={this.handleLinkClick} className={"ui item "+ (this.state.active==="home"?"active":"")} to="/">Home</Link>
+        <Link id="about" onClick={this.handleLinkClick} className={"ui item "+ (this.state.active==="about"?"active":"")} to="/about">About</Link>
+        <Link id="medicamentos" onClick={this.handleLinkClick} className={"ui item "+ (this.state.active==="medicamentos"?"active":"")} to="/medicamentos">Medicamentos</Link>
         
         <div className="right menu">
             <a className="ui item">Logout</a>
