@@ -1,5 +1,18 @@
 {
-  "medicamentos": [],
+  "medicamentos": [
+    {
+      "name": "aspirina efervescente",
+      "id": 1
+    },
+    {
+      "name": "Ibuprofeno",
+      "id": 2
+    },
+    {
+      "name": "Almistol",
+      "id": 3
+    }
+  ],
   "recetas": [],
   "lineasdereceta": []
 }

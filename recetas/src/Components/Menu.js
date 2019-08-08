@@ -1,41 +1,38 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import axios from 'axios';
+import React, {Component } from 'react';
+import { Link } from 'react-router-dom';
 
-class Menu extends React.Component {
-  constructor(props){
-      super(props);
-      this.state= {
-          active:""
-      }
-  }
+class Menu extends Component {
 
-  componentDidMount(){
-    axios
-  }
-    handleLinkClick=event=>{
-        console.log(event.target.id);
-        this.setState({
+    constructor (props){
+        super (props);
+        this.state = {
+            active: ""
+        }
+    }
+
+    handleLinkClick = event => {
+        this.setState ({
             active: event.target.id
         })
-   }
-    render(){
-    return (
-        <>
-        <div className="ui secondary pointing menu">
-        <Link id="home" onClick={this.handleLinkClick} className={"ui item "+ (this.state.active==="home"?"active":"")} to="/">Home</Link>
-        <Link id="about" onClick={this.handleLinkClick} className={"ui item "+ (this.state.active==="about"?"active":"")} to="/about">About</Link>
-        <Link id="medicamentos" onClick={this.handleLinkClick} className={"ui item "+ (this.state.active==="medicamentos"?"active":"")} to="/medicamentos">Medicamentos</Link>
         
-        <div className="right menu">
-            <a className="ui item">Logout</a>
-        </div>
-        </div>
-        <div className="ui segment">
-        <p></p>
-        </div>
-        </>
-    )
+    }
+
+    render () {
+        return (
+            <>
+                <div className="ui secondary pointing menu">
+                    <Link id="home" onClick={this.handleLinkClick} className= {"ui item " + (this.state.active === "home" ? "active": "")} to="/">Home</Link>
+                    <Link id="medicamentos" onClick={this.handleLinkClick} className= {"ui item " + (this.state.active === "medicamentos" ? "active": "")} to="/medicamentos">Medicamentos</Link>
+                    <Link id="about" onClick={this.handleLinkClick} className= {"ui item " + (this.state.active === "about" ? "active": "")} to="/about">About</Link>
+
+                    <div className="right menu">
+                        <button href="#" className="ui item">
+                        Salir
+                        </button>
+                    </div>
+                </div>
+            </>
+        )
     }
 }
 
